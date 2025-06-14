@@ -4,6 +4,24 @@ This is a minimal Next.js to-do list example with drag and drop and PostgreSQL p
 
 ## Setup
 
+### Using Podman Compose
+
+If you have Podman and `podman-compose` installed you can bring up a ready-to-use
+development environment without installing Node or PostgreSQL locally:
+
+```bash
+podman-compose -f ../podman-compose.yml up
+```
+
+Add the `--build` flag on the first run to build the local Node image. This
+makes the setup work even if you don't have a registry configured.
+
+This starts both PostgreSQL and the Next.js dev server. The application will be
+available on [http://localhost:3000](http://localhost:3000). The database data
+is persisted in the `pgdata` volume.
+
+### Manual Setup
+
 1. Install dependencies:
    ```bash
    npm install
